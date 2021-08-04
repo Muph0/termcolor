@@ -37,5 +37,5 @@ Output:
 
 ## Reference
 
-For detailed reference, see the generated user manual.
+For detailed reference, see the generated [user manual](https://muph0.github.io/termcolor/user_manual/html).
 

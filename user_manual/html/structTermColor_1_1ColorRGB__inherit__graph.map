@@ -1,0 +1,4 @@
+<map id="TermColor.ColorRGB" name="TermColor.ColorRGB">
+<area shape="rect" id="node1" title="Color represented as a vector of (Red,Green,Blue) components in range [0.0, 1.0]." alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node2" href="$interfaceTermColor_1_1IColor.html" title="Represents a color." alt="" coords="52,5,112,32"/>
+</map>
