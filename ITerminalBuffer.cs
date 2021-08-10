@@ -7,7 +7,7 @@ namespace TermColor {
     /// Color might be internally represented as a specific implementation of <see cref="IColor"/>.
     /// Can be flushed out to other buffers or to a display device.
     /// </summary>
-    internal interface ITerminalBuffer {
+    public interface ITerminalBuffer {
 
         /// <summary>
         /// Nuber of columns of the buffer.

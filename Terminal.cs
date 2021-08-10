@@ -3,6 +3,7 @@ using System.IO;
 using System.Numerics;
 using System.Text;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("TermColorDemo")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("TermColorTest")]
 
 namespace TermColor {
@@ -24,12 +25,12 @@ namespace TermColor {
         /// <summary>
         /// Gets the width of the buffer.
         /// </summary>
-        public int Width => _buffer.Width;
+        public int Width => Buffer.Width;
 
         /// <summary>
         /// Gets the height of the buffer.
         /// </summary>
-        public int Height => _buffer.Height;
+        public int Height => Buffer.Height;
 
         /// <summary>
         /// Gets or sets the column position of the cursor within the buffer.
@@ -75,8 +76,8 @@ namespace TermColor {
         private IColor _backgroundColor;
 
 
-        internal string BufferType => _buffer.GetType().Name;
-        private ITerminalBuffer _buffer;
+        internal string BufferType => Buffer.GetType().Name;
+        internal ITerminalBuffer Buffer { get; set; }
 
         /// <summary>
         /// Gets or sets the output target. Calling <see cref="Flush()"/> forwards contents of this <see cref="Terminal"/> to <see cref="Out"/>.
@@ -103,7 +104,7 @@ namespace TermColor {
         /// <param name="colorMode">The color mode of the new buffer.</param>
         public Terminal(int width, int height, ColorMode colorMode) {
             ResetColor();
-            _buffer = createBuffer(width, height, colorMode);
+            Buffer = createBuffer(width, height, colorMode);
             _colorMode = colorMode;
         }
 
@@ -132,7 +133,7 @@ namespace TermColor {
             get => _colorMode;
             set {
                 _colorMode = value;
-                this._buffer = createBuffer(Width, Height, _colorMode);
+                this.Buffer = createBuffer(Width, Height, _colorMode);
             }
         }
         private ColorMode _colorMode;
@@ -178,11 +179,11 @@ namespace TermColor {
 
                     var (fg, bg, mask) = DitherPreset.Map(target.ToRGB());
 
-                    _buffer.SetPoint<Color4>(_cursorX, _cursorY, mask, fg, bg);
+                    Buffer.SetPoint<Color4>(_cursorX, _cursorY, mask, fg, bg);
 
 
                 } else {
-                    _buffer.SetPoint(_cursorX, _cursorY, value, ForegroundColor, BackgroundColor);
+                    Buffer.SetPoint(_cursorX, _cursorY, value, ForegroundColor, BackgroundColor);
                 }
 
                 _cursorX++;
@@ -203,7 +204,7 @@ namespace TermColor {
         /// </summary>
         public override void Flush() {
             if (Out != null) {
-                _buffer.Flush(Out);
+                Buffer.Flush(Out);
             }
         }
 
@@ -214,7 +215,7 @@ namespace TermColor {
         /// <param name="y">Row position of the top left corner of the displayed output.</param>
         public void Flush(int x, int y) {
             if (Out != null) {
-                _buffer.Flush(Out, x, y);
+                Buffer.Flush(Out, x, y);
             }
         }
 
@@ -237,34 +238,34 @@ namespace TermColor {
         }
 
         public void SetChar(int x, int y, char ch)
-            => this._buffer.SetChar(x, y, ch);
+            => this.Buffer.SetChar(x, y, ch);
 
         public void SetForeground<TColorValue>(int x, int y, in TColorValue color) where TColorValue : IColor
-            => _buffer.SetForeground(x, y, color);
+            => Buffer.SetForeground(x, y, color);
 
         public void SetBackground<TColorValue>(int x, int y, in TColorValue color) where TColorValue : IColor
-            => _buffer.SetBackground(x, y, color);
+            => Buffer.SetBackground(x, y, color);
 
         /// <summary>
         /// Clears the buffer with <see cref="BackgroundColor"/> and sets the cursor to the top left corner.
         /// </summary>
         public void Clear() {
-            _buffer.Clear();
+            Buffer.Clear();
             SetCursorPosition(0, 0);
         }
 
         public void Clear<TColorValue>(char c, in TColorValue foreground, in TColorValue background) where TColorValue : IColor
-            => _buffer.Clear(c, foreground, background);
+            => Buffer.Clear(c, foreground, background);
 
         public void Flush(TextWriter output) {
             if (output != null) {
-                _buffer.Flush(output);
+                Buffer.Flush(output);
             }
         }
 
         public void Flush(TextWriter output, int offsetLeft, int offsetTop) {
             if (output != null) {
-                _buffer.Flush(output, offsetLeft, offsetTop);
+                Buffer.Flush(output, offsetLeft, offsetTop);
             }
         }
     }
