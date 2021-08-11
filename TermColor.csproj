@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="TermColorDemo\**" />
+    <Compile Remove="TermColorTest\**" />
+    <EmbeddedResource Remove="TermColorDemo\**" />
+    <EmbeddedResource Remove="TermColorTest\**" />
+    <None Remove="TermColorDemo\**" />
+    <None Remove="TermColorTest\**" />
+  </ItemGroup>
+
 </Project>

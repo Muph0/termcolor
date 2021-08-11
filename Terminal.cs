@@ -75,9 +75,7 @@ namespace TermColor {
         }
         private IColor _backgroundColor;
 
-
-        internal string BufferType => Buffer.GetType().Name;
-        internal ITerminalBuffer Buffer { get; set; }
+        internal ITerminalBuffer Buffer { get; private set; }
 
         /// <summary>
         /// Gets or sets the output target. Calling <see cref="Flush()"/> forwards contents of this <see cref="Terminal"/> to <see cref="Out"/>.
@@ -103,6 +101,12 @@ namespace TermColor {
         /// <param name="height">The number of rows in the new buffer.</param>
         /// <param name="colorMode">The color mode of the new buffer.</param>
         public Terminal(int width, int height, ColorMode colorMode) {
+#if DEBUG
+            if (width < 0) 
+                throw new ArgumentOutOfRangeException(nameof(width), "Width must be positive.");
+            if (height < 0) 
+                throw new ArgumentOutOfRangeException(nameof(height), "Height must be positive.");
+#endif
             ResetColor();
             Buffer = createBuffer(width, height, colorMode);
             _colorMode = colorMode;

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TermColor.Drawing {
 
+namespace TermColor.Drawing {
 
     public static class TermColorDrawing {
 
@@ -32,10 +32,12 @@ namespace TermColor.Drawing {
             where TColor : IColor {
 
             ensureInOrder(ref startX, ref endX);
+#if DEBUG
             if (startX < 0 || endX >= buffer.Width) {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(startX)}, {nameof(endX)}", $"Given range ({startX}, {endX}) is outside of the Width{{{buffer.Width}}} of buffer.");
             }
-
+#endif
             for (int x = startX; x < endX; x++) {
                 buffer.SetPoint(x, y, ch, foreground, background);
             }
@@ -56,10 +58,12 @@ namespace TermColor.Drawing {
             where TColor : IColor {
 
             ensureInOrder(ref startY, ref endY);
+#if DEBUG
             if (startY < 0 || endY >= buffer.Height) {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(startY)}, {nameof(endY)}", $"Given range ({startY}, {endY}) is outside of the Height{{{buffer.Height}}} of buffer.");
             }
-
+#endif
             for (int y = startY; y < endY; y++) {
                 buffer.SetPoint(x, y, ch, foreground, background);
             }
@@ -106,13 +110,16 @@ namespace TermColor.Drawing {
 
             ensureInOrder(ref startX, ref endX);
             ensureInOrder(ref startY, ref endY);
-
+#if DEBUG
             if (startX < 0 || endX >= buffer.Width) {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(startX)}, {nameof(endX)}", $"Given range ({startX}, {endX}) is outside of the Width{{{buffer.Width}}} of buffer.");
             }
             if (startY < 0 || endY >= buffer.Height) {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(startY)}, {nameof(endY)}", $"Given range ({startY}, {endY}) is outside of the Height{{{buffer.Height}}} of buffer.");
             }
+#endif
 
             for (int y = startY; y <= endY; y++) {
                 for (int x = startX; x <= endX; x++) {
@@ -137,7 +144,16 @@ namespace TermColor.Drawing {
         public static void DrawLine<TColor>(this ITerminalBuffer buffer,
             int startX, int startY, int endX, int endY, char ch, TColor foreground, in TColor background)
             where TColor : IColor {
-
+#if DEBUG
+            if (startX < 0 || startX >= buffer.Width || startY < 0 || startY >= buffer.Height) {
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(startX)}, {nameof(startY)}", $"Start point ({startX}, {startY}) is outside of the buffer.");
+            }
+            if (endX < 0 || endX >= buffer.Width || endY < 0 || endY >= buffer.Height) {
+                throw new ArgumentOutOfRangeException(
+                    $"{nameof(endX)}, {nameof(endY)}", $"End point ({endX}, {endY}) is outside of the buffer.");
+            }
+#endif
             int dx = endX - startX;
             int dy = endY - startY;
 
@@ -153,7 +169,6 @@ namespace TermColor.Drawing {
                 X += stepX;
                 Y += stepY;
             }
-
         }
     }
 }
