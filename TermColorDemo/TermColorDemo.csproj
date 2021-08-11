@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="D:\source\repos\AsciiRendering\zapoctak-2021-leto\TermColor\TermColor.csproj" />
+    <ProjectReference Include="..\TermColor.csproj" />
   </ItemGroup>
 
 </Project>

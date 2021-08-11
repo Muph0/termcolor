@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TermColor", "TermColor.csproj", "{A40AF7A4-152E-47C3-ACA7-A38C4906FAF0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TermColorDemo", "C:\Users\Honza\source\repos\AsciiRendering\zapoctak-2021-leto\TermColor\TermColorDemo\TermColorDemo.csproj", "{60BA2E00-D31D-4491-A0AA-2402BDACC74B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TermColorDemo", "TermColorDemo\TermColorDemo.csproj", "{60BA2E00-D31D-4491-A0AA-2402BDACC74B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermColorTest", "TermColorTest\TermColorTest.csproj", "{DBE48D84-36EF-452D-A235-BC7AFC69BF30}"
 EndProject
