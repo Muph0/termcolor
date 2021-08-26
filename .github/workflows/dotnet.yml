@@ -26,8 +26,10 @@ jobs:
   doxygen:
     runs-on: ubuntu-latest
     steps:
-    - name: Find config
-      run: find | grep doxygen_user_manual
+    - name: Pwd
+      run: pwd
+    - name: Ls
+      run: ls -la
     - name: Build docs
       uses: mattnotmitt/doxygen-action@v1
       with:
