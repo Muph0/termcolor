@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,3 +22,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+  doxygen:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: mattnotmitt/doxygen-action@v1
+      with:
+        working-directory: '/'
+        doxyfile-path: 'doxygen_user_manual.conf'
+
