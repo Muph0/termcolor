@@ -29,13 +29,18 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
     - name: Build docs
       uses: mattnotmitt/doxygen-action@v1
       with:
         doxyfile-path: 'doxygen_user_manual.conf'
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
+
+    - name: Copy images
+      run: cp -ru images user_manual/html/
+
+    - name: Deploy to github pages
+      uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
-        name: User_manual
-        path: user_manual/
+        branch: pages
+        folder: user_manual/html
 
