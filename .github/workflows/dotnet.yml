@@ -36,7 +36,9 @@ jobs:
         doxyfile-path: 'doxygen_user_manual.conf'
 
     - name: Copy images
-      run: cp -ru images user_manual/html/
+      run: |
+        mkdir -p user_manual/html/images
+        cp -ru images user_manual/html/
 
     - name: Deploy to github pages
       uses: JamesIves/github-pages-deploy-action@4.1.4
