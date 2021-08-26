@@ -26,13 +26,10 @@ jobs:
   doxygen:
     runs-on: ubuntu-latest
     steps:
-    - name: Pwd
-      run: pwd
-    - name: Ls
-      run: ls -la
+    - name: cat
+      run: cat Makefile
     - name: Build docs
       uses: mattnotmitt/doxygen-action@v1
       with:
-        working-directory: '.'
         doxyfile-path: 'doxygen_user_manual.conf'
 
