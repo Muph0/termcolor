@@ -37,6 +37,8 @@ jobs:
 
     - name: Copy images
       run: |
+        ls -la ./user_manual/html
+        whoami
         mkdir -p user_manual/html/images
         cp -ru images user_manual/html/
 
