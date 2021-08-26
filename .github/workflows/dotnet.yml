@@ -28,6 +28,6 @@ jobs:
     steps:
     - uses: mattnotmitt/doxygen-action@v1
       with:
-        working-directory: '/'
+        working-directory: './'
         doxyfile-path: 'doxygen_user_manual.conf'
 
