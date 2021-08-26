@@ -1,7 +1,0 @@
-<map id="TermColor.ANSIColor" name="TermColor.ANSIColor">
-<area shape="rect" id="node1" title="Represents a color mappable to an ANSI escape code." alt="" coords="159,80,315,107"/>
-<area shape="rect" id="node3" href="$structTermColor_1_1Color24.html" title="A color from 24&#45;bit palette." alt="" coords="5,155,147,181"/>
-<area shape="rect" id="node4" href="$structTermColor_1_1Color4.html" title="A color from 16&#45;color palette." alt="" coords="171,155,304,181"/>
-<area shape="rect" id="node5" href="$structTermColor_1_1Color8.html" title="A color from 256&#45;color palette." alt="" coords="328,155,461,181"/>
-<area shape="rect" id="node2" href="$interfaceTermColor_1_1IColor.html" title="Represents a color." alt="" coords="207,5,267,32"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="TermColor.ANSIColor" name="TermColor.ANSIColor">
-<area shape="rect" id="node1" title="Represents a color mappable to an ANSI escape code." alt="" coords="5,80,161,107"/>
-<area shape="rect" id="node2" href="$interfaceTermColor_1_1IColor.html" title="Represents a color." alt="" coords="53,5,113,32"/>
-</map>
