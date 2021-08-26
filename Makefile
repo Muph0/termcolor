@@ -13,11 +13,9 @@ distclean:
 	rm -rf obj
 	rm -rf bin
 	rm -rf user_manual
-	rm -rf programmer_manual
 	
 docs:
 	doxygen doxygen_user_manual.conf
-	doxygen doxygen_programmer_manual.conf
 	cp -ru images user_manual/
 
 

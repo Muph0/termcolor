@@ -78,6 +78,13 @@ namespace TermColor {
             "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐" +
             "└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ ";
 
+
+        public const int STD_OUTPUT_HANDLE = -11;
+        public const uint ENABLE_VIRTUAL_TERMINAL_PROCESSING = 4;
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern IntPtr GetStdHandle(int nStdHandle);
+
         [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         internal static extern SafeFileHandle CreateFile(
             string fileName,
@@ -95,6 +102,16 @@ namespace TermColor {
           Coord dwBufferSize,
           Coord dwBufferCoord,
           ref SmallRect lpWriteRegion);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern bool SetConsoleMode(
+            IntPtr hConsoleHandle,
+            uint dwMode);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern bool GetConsoleMode(
+            IntPtr hConsoleHandle,
+            out uint lpMode);
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct Coord {
@@ -138,17 +155,29 @@ namespace TermColor {
         }
         #endregion
 
+        internal static void EnableVTProcessing() {
+            var handle = GetStdHandle(STD_OUTPUT_HANDLE);
+            if (handle == new IntPtr(-1)) {
+                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+            }
+            if (!GetConsoleMode(handle, out uint mode)) {
+                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+            }
+            mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+            if (!SetConsoleMode(handle, mode)) {
+                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+            }
+        }
+
         public void Flush(TextWriter output) {
             Flush(output, 0, 0);
         }
 
         public void Flush(TextWriter output, int offsetX, int offsetY) {
-            if (output != Console.Out) {
-                throw new InvalidOperationException();
-            }
 
             SafeFileHandle h = CreateFile("CONOUT$", 0x40000000, 2,
                 IntPtr.Zero, FileMode.Open, 0, IntPtr.Zero);
+
 
             SmallRect rect = new SmallRect() {
                 Left = (short)offsetX,

@@ -38,7 +38,7 @@ namespace TermColor.Drawing {
                     $"{nameof(startX)}, {nameof(endX)}", $"Given range ({startX}, {endX}) is outside of the Width{{{buffer.Width}}} of buffer.");
             }
 #endif
-            for (int x = startX; x < endX; x++) {
+            for (int x = startX; x <= endX; x++) {
                 buffer.SetPoint(x, y, ch, foreground, background);
             }
         }
@@ -64,7 +64,7 @@ namespace TermColor.Drawing {
                     $"{nameof(startY)}, {nameof(endY)}", $"Given range ({startY}, {endY}) is outside of the Height{{{buffer.Height}}} of buffer.");
             }
 #endif
-            for (int y = startY; y < endY; y++) {
+            for (int y = startY; y <= endY; y++) {
                 buffer.SetPoint(x, y, ch, foreground, background);
             }
         }
@@ -85,8 +85,8 @@ namespace TermColor.Drawing {
             int startX, int startY, int endX, int endY, char ch, in TColor foreground, in TColor background)
             where TColor : IColor {
 
-            DrawHorizontalLine(buffer, startX, endX, startY, ch, foreground, background);
-            DrawHorizontalLine(buffer, startX, endX, endY, ch, foreground, background);
+            DrawHorizontalLine(buffer, startX+1, endX-1, startY, ch, foreground, background);
+            DrawHorizontalLine(buffer, startX+1, endX-1, endY, ch, foreground, background);
 
             DrawVerticalLine(buffer, startX, startY, endY, ch, foreground, background);
             DrawVerticalLine(buffer, endX, startY, endY, ch, foreground, background);

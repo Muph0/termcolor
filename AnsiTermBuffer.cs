@@ -37,6 +37,10 @@ namespace TermColor {
             _foreground = new TColor[Width, Height];
             _background = new TColor[Width, Height];
             Clear();
+
+            if (true && Environment.OSVersion.Platform == PlatformID.Win32NT) {
+                Win32TermBuffer.EnableVTProcessing();
+            }
         }
 
         void ITerminalBuffer.Clear<TColorValue>(char ch, in TColorValue foreground, in TColorValue background)
@@ -110,8 +114,7 @@ namespace TermColor {
             }
 
             sb.Append(SGR.ResetColor());
-            sb.Append(CSI.SetCursorPosition(offsetX, offsetY));
-            output.Write(sb);
+            Console.Write(sb);
         }
     }
 }
