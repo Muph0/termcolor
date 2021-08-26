@@ -38,7 +38,7 @@ namespace TermColor {
             _background = new TColor[Width, Height];
             Clear();
 
-            if (true && Environment.OSVersion.Platform == PlatformID.Win32NT) {
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT) {
                 Win32TermBuffer.EnableVTProcessing();
             }
         }

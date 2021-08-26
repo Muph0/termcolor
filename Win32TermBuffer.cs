@@ -155,16 +155,19 @@ namespace TermColor {
         }
         #endregion
 
+        internal static bool EnableVTProcessingThrows = true;
         internal static void EnableVTProcessing() {
             var handle = GetStdHandle(STD_OUTPUT_HANDLE);
-            if (handle == new IntPtr(-1)) {
-                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
-            }
-            if (!GetConsoleMode(handle, out uint mode)) {
-                throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
-            }
-            mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-            if (!SetConsoleMode(handle, mode)) {
+            if (handle != new IntPtr(-1)) {
+                if (GetConsoleMode(handle, out uint mode)) {
+                    mode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+                    if (SetConsoleMode(handle, mode)) {
+                        return;
+                    }
+                }
+            } 
+
+            if (EnableVTProcessingThrows) {
                 throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
             }
         }

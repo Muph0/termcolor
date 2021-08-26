@@ -15,6 +15,7 @@ namespace TermColor.Test {
         [InlineData(1, 200)]
         [InlineData(200, 1)]
         public void BufferSizeWorks(int width, int height) {
+            Win32TermBuffer.EnableVTProcessingThrows = false;
             Terminal term = new(width, height);
 
             Assert.Equal(term.Width, width);

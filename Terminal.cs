@@ -102,9 +102,9 @@ namespace TermColor {
         /// <param name="colorMode">The color mode of the new buffer.</param>
         public Terminal(int width, int height, ColorMode colorMode) {
 #if DEBUG
-            if (width < 0) 
+            if (width <= 0) 
                 throw new ArgumentOutOfRangeException(nameof(width), "Width must be positive.");
-            if (height < 0) 
+            if (height <= 0) 
                 throw new ArgumentOutOfRangeException(nameof(height), "Height must be positive.");
 #endif
             ResetColor();
