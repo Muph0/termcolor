@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -26,10 +27,15 @@ jobs:
   doxygen:
     runs-on: ubuntu-latest
     steps:
-    - name: cat
-      run: cat Makefile
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Build docs
       uses: mattnotmitt/doxygen-action@v1
       with:
         doxyfile-path: 'doxygen_user_manual.conf'
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: User_manual
+        path: user_manual/
 
