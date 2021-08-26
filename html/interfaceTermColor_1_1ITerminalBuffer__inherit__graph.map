@@ -1,0 +1,6 @@
+<map id="TermColor.ITerminalBuffer" name="TermColor.ITerminalBuffer">
+<area shape="rect" id="node1" title="Two dimensional buffer of triplets (char, IColor, IColor). Color might be internally represented as a..." alt="" coords="185,5,358,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,180,121"/>
+<area shape="rect" id="node3" href="$classTermColor_1_1Terminal.html" title="Represents a colored text buffer. Not thread&#45;safe." alt="" coords="204,87,339,114"/>
+<area shape="rect" id="node4" title=" " alt="" coords="363,87,548,114"/>
+</map>

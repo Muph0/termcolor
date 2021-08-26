@@ -1,0 +1,4 @@
+<map id="TermColor.ColorHSV" name="TermColor.ColorHSV">
+<area shape="rect" id="node1" title="Color represented as (Hue,Saturation,Value) vector." alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node2" href="$interfaceTermColor_1_1IColor.html" title="Represents a color." alt="" coords="49,5,105,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="TermColor.Color24" name="TermColor.Color24">
+<area shape="rect" id="node1" title="A color from 24&#45;bit palette." alt="" coords="5,155,135,181"/>
+<area shape="rect" id="node2" href="$interfaceTermColor_1_1ANSIColor.html" title="Represents a color mappable to an ANSI escape code." alt="" coords="28,80,112,107"/>
+<area shape="rect" id="node3" href="$interfaceTermColor_1_1IColor.html" title="Represents a color." alt="" coords="42,5,98,32"/>
+</map>
