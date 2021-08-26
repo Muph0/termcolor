@@ -35,6 +35,9 @@ jobs:
       with:
         doxyfile-path: 'doxygen_user_manual.conf'
 
+    - name: Transfer docs to runner
+      run: sudo chown -R runner user_manual
+
     - name: Copy images
       run: |
         ls -la ./user_manual/html
