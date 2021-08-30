@@ -9,15 +9,34 @@ using System.Text;
 namespace TermColor {
 
     public enum ColorMode {
+        /// <summary>
+        /// 16 color mode.
+        /// </summary>
         Plain4bit,
+
+        /// <summary>
+        /// 16 color mode with dithering. Originally designed for DOS palette with the MS raster fonts.
+        /// However, the <see cref="Terminal.DitherPreset" /> can be modified to work with different font and dithering characters.
+        /// </summary>
         Dither4bit,
+
+        /// <summary>
+        /// 256 color mode.
+        /// </summary>
         Plain8bit,
+
+        /// <summary>
+        /// Truecolor mode.
+        /// </summary>
         Plain24bit,
     }
 
     /// <summary>
     /// Represents a colored text buffer. Not thread-safe.
     /// </summary>
+    /// Internally uses <see cref="AnsiTermBuffer" /> and <see cref="Win32TermBuffer" />
+    /// based on the current <see cref="Terminal.ColorMode" />.
+    /// On Windows, <see cref="Win32TermBuffer" /> is used in 16 color mode, otherwise <see cref="AnsiTermBuffer" /> is used.
     public class Terminal : TextWriter, ITerminalBuffer {
 
         public override Encoding Encoding => Encoding.Default;
@@ -102,9 +121,9 @@ namespace TermColor {
         /// <param name="colorMode">The color mode of the new buffer.</param>
         public Terminal(int width, int height, ColorMode colorMode) {
 #if DEBUG
-            if (width <= 0) 
+            if (width <= 0)
                 throw new ArgumentOutOfRangeException(nameof(width), "Width must be positive.");
-            if (height <= 0) 
+            if (height <= 0)
                 throw new ArgumentOutOfRangeException(nameof(height), "Height must be positive.");
 #endif
             ResetColor();
@@ -223,6 +242,10 @@ namespace TermColor {
             }
         }
 
+        /// <summary>
+        /// Selects, which implementation of <see cref="ITerminalBuffer" /> suits best for
+        /// current platform and <see cref="Terminal.ColorMode">, and returns new instance of that.
+        /// </summary>
         private static ITerminalBuffer createBuffer(int width, int height, ColorMode mode) {
             switch (mode) {
                 case ColorMode.Dither4bit:

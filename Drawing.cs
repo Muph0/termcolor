@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TermColor.Drawing {
 
-    public static class TermColorDrawing {
+    public static class ITerminalBufferEx {
 
         private static void ensureInOrder(ref int a, ref int b) {
             if (a > b) {

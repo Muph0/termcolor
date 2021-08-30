@@ -11,7 +11,7 @@ namespace TermColor {
 
     /// <summary>
     /// Text buffer capable of storing color data.
-    /// Supports only 4-bit colors. Data internally represented as a binary structure ready to be passed to Windows Console API.
+    /// Supports only 16 color mode. Data internally represented as a binary structure ready to be passed to Windows Console API.
     /// Outputs colored text via Windows Console API.
     /// </summary>
     internal class Win32TermBuffer : ITerminalBuffer {
@@ -170,7 +170,7 @@ namespace TermColor {
                         return;
                     }
                 }
-            } 
+            }
 
             if (EnableVTProcessingThrows) {
                 throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());

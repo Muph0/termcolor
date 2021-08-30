@@ -35,7 +35,12 @@ Output:
 
 ![Hello world](images/hello_world.png)
 
+## Contributing
+
+If you want to contribute, or modify the library for your own use,
+check out the [programmer's manual](https://muph0.github.io/termcolor/md_contrib.html).
+
 ## Reference
 
-For detailed reference, see the generated [user manual](https://muph0.github.io/termcolor/user_manual/html).
+For details, see the generated [reference](https://muph0.github.io/termcolor/).
 

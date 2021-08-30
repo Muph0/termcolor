@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace TermColor.AnsiEscapeCodes {
 
     /// <summary>
-    /// Helper class for generating "Select Graphic Rendition" ANSI codes
+    /// Helper class for generating "Select Graphic Rendition" ANSI codes.
+    /// For detailed explanation, see the Wikipedia article https://en.wikipedia.org/wiki/ANSI_escape_code
     /// </summary>
     public static class SGR {
 
@@ -49,52 +50,90 @@ namespace TermColor.AnsiEscapeCodes {
             "\x1b[107m",
         };
 
+        /// <summary>
+        /// Creates a sequence which sets the foreground color to specified color in 16 color palette.
+        /// </summary>
         public static string Foreground(Color4 clr) {
             return foreground_[(int)clr.Color];
         }
+        /// <summary>
+        /// Creates a sequence which sets the foreground color to specified color in 256 color palette.
+        /// </summary>
         public static string Foreground(Color8 clr) {
             return string.Concat("\x1b[38;5;", clr.Color, "m");
         }
+        /// <summary>
+        /// Creates a sequence which sets the foreground color to specified color in RGB color palette.
+        /// </summary>
         public static string Foreground(Color24 clr) {
             return string.Concat("\x1b[38;2;", clr.Red, ";", clr.Green, ";", clr.Blue, "m");
         }
 
+        /// <summary>
+        /// Writes a sequence which sets the foreground color to specified color in 16 color palette to the specified writer.
+        /// </summary>
         public static void Foreground(this TextWriter tw, Color4 clr) {
             tw.Write(foreground_[(int)clr.Color]);
         }
+        /// <summary>
+        /// Writes a sequence which sets the foreground color to specified color in 256 color palette to the specified writer.
+        /// </summary>
         public static void Foreground(this TextWriter tw, Color8 clr) {
             tw.Write($"\x1b[38;5;{clr.Color}m");
         }
+        /// <summary>
+        /// Writes a sequence which sets the foreground color to specified color in RGB color palette to the specified writer.
+        /// </summary>
         public static void Foreground(this TextWriter tw, Color24 clr) {
             tw.Write($"\x1b[38;2;{clr.Red};{clr.Green};{clr.Blue}m");
         }
 
 
 
+        /// <summary>
+        /// Creates a sequence which sets the background color to specified color in 16 color palette.
+        /// </summary>
         public static string Background(Color4 clr) {
             return background_[(int)clr.Color];
         }
+        /// <summary>
+        /// Creates a sequence which sets the background color to specified color in 256 color palette.
+        /// </summary>
         public static string Background(Color8 clr) {
             return string.Concat("\x1b[48;5;", clr.Color, "m");
         }
+        /// <summary>
+        /// Creates a sequence which sets the background color to specified color in RGB color palette.
+        /// </summary>
         public static string Background(Color24 clr) {
             return string.Concat("\x1b[48;2;", clr.Red, ";", clr.Green, ";", clr.Blue, "m");
         }
+        /// <summary>
+        /// Writes a sequence which sets the background color to specified color in 16 color palette to the specified writer.
+        /// </summary>
         public static void Background(this TextWriter tw, Color4 clr) => tw.Write(Background(clr));
+        /// <summary>
+        /// Writes a sequence which sets the background color to specified color in 256 color palette to the specified writer.
+        /// </summary>
         public static void Background(this TextWriter tw, Color8 clr) => tw.Write(Background(clr));
+        /// <summary>
+        /// Writes a sequence which sets the background color to specified color in RGB color palette to the specified writer.
+        /// </summary>
         public static void Background(this TextWriter tw, Color24 clr) => tw.Write(Background(clr));
 
-
-        public static void ResetColor(this TextWriter tw) {
-            tw.Write(SGR.ResetColor());
-        }
-        public static string ResetColor() {
-            return "\x1b[0m";
-        }
+        /// <summary>
+        /// Creates a sequence which resets the text formatting.
+        /// </summary>
+        public static string ResetColor() => "\x1b[0m";
+        /// <summary>
+        /// Writes a sequence which resets the text formatting to the specified writer.
+        /// </summary>
+        public static void ResetColor(this TextWriter tw) => tw.Write(SGR.ResetColor());
     }
 
     /// <summary>
     /// Helper class for generating "Control Sequence Introducer" ANSI sequences
+    /// For detailed explanation, see the Wikipedia article https://en.wikipedia.org/wiki/ANSI_escape_code
     /// </summary>
     public static class CSI {
 
