@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['terminal_58',['Terminal',['../classTermColor_1_1Terminal.html',1,'TermColor']]]
+  ['mathutils_83',['MathUtils',['../classTermColor_1_1MathUtils.html',1,'TermColor']]]
 ];

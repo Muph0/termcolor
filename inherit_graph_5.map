@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceTermColor_1_1IColor.html" title="Represents a color." alt="" coords="5,107,124,133"/>
+<area shape="rect" id="node2" href="$interfaceTermColor_1_1ANSIColor.html" title="Represents a color mappable to an ANSI escape code." alt="" coords="172,56,319,83"/>
+<area shape="rect" id="node6" href="$structTermColor_1_1ColorHSV.html" title="Color represented as (Hue,Saturation,Value) vector." alt="" coords="174,107,317,133"/>
+<area shape="rect" id="node7" href="$structTermColor_1_1ColorRGB.html" title="Color represented as a vector of (Red,Green,Blue) components in range [0.0, 1.0]." alt="" coords="174,157,317,184"/>
+<area shape="rect" id="node3" href="$structTermColor_1_1Color24.html" title="A color from 24&#45;bit palette." alt="" coords="367,5,496,32"/>
+<area shape="rect" id="node4" href="$structTermColor_1_1Color4.html" title="A color from 16&#45;color palette." alt="" coords="370,56,493,83"/>
+<area shape="rect" id="node5" href="$structTermColor_1_1Color8.html" title="A color from 256&#45;color palette." alt="" coords="370,107,493,133"/>
+</map>

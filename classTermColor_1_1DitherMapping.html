@@ -70,6 +70,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pac-methods">Package Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="classTermColor_1_1DitherMapping-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -103,6 +104,13 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:afb77b8660b077bca8902d7b7b23fa0b6"><td class="memItemLeft" align="right" valign="top">static readonly <a class="el" href="classTermColor_1_1DitherMapping.html">DitherMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1DitherMapping.html#afb77b8660b077bca8902d7b7b23fa0b6">Default</a></td></tr>
 <tr class="separator:afb77b8660b077bca8902d7b7b23fa0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
+Package Functions</h2></td></tr>
+<tr class="memitem:aaefebf43af81a75a997b494068ca8a97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1DitherMapping.html#aaefebf43af81a75a997b494068ca8a97">Mix</a> (<a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a> foreground, <a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a> background, char mask)</td></tr>
+<tr class="separator:aaefebf43af81a75a997b494068ca8a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5b39cc942891ada21addf2de2e7cf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTermColor_1_1DitherMapping_1_1ColoredChar.html">ColoredChar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1DitherMapping.html#a0a5b39cc942891ada21addf2de2e7cf5">FindClosest</a> (in <a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a> color)</td></tr>
+<tr class="separator:a0a5b39cc942891ada21addf2de2e7cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -152,6 +160,41 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0a5b39cc942891ada21addf2de2e7cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5b39cc942891ada21addf2de2e7cf5">&#9670;&nbsp;</a></span>FindClosest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTermColor_1_1DitherMapping_1_1ColoredChar.html">ColoredChar</a> TermColor.DitherMapping.FindClosest </td>
+          <td>(</td>
+          <td class="paramtype">in <a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a>&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Search the entire color space and find the closest approximation of <em>color</em> . </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="ac5f83395dfa0fa61b1420f8a6a95433f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5f83395dfa0fa61b1420f8a6a95433f">&#9670;&nbsp;</a></span>Map()</h2>
 
@@ -190,6 +233,59 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aaefebf43af81a75a997b494068ca8a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefebf43af81a75a997b494068ca8a97">&#9670;&nbsp;</a></span>Mix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a> TermColor.DitherMapping.Mix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a>&#160;</td>
+          <td class="paramname"><em>foreground</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTermColor_1_1ColorRGB.html">ColorRGB</a>&#160;</td>
+          <td class="paramname"><em>background</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mix two colors using the specified character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">foreground</td><td>Foreground color.</td></tr>
+    <tr><td class="paramname">background</td><td>Background color.</td></tr>
+    <tr><td class="paramname">mask</td><td>The mask character.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The perceived color when the mask character is printed on screen with given colors.</dd></dl>
 
 </div>
 </div>
