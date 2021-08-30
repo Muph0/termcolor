@@ -66,7 +66,38 @@ $(function() {
 <div class="title">Programmers manual </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><p>This document provides only a high level overview of the library. For details, see reference of individual classes.</p>
+<p>The library features can be split into following categories:</p>
+<ol type="1">
+<li><a href="#terminal-buffering">Terminal buffering</a></li>
+<li><a href="#color-representation">Color representation</a></li>
+<li><a href="#drawing-shapes">Drawing shapes</a></li>
+<li><a href="#escape-codes">Escape codes</a></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Terminal buffering</h1>
+<p>The <code><a class="el" href="classTermColor_1_1Terminal.html" title="Represents a colored text buffer. Not thread-safe.">TermColor.Terminal</a></code> class is the main API for interacting with this library. It internally uses <code><a class="el" href="classTermColor_1_1AnsiTermBuffer.html" title="Text buffer capable of storing color data. Outputs text formatted with ANSI escape codes.">TermColor.AnsiTermBuffer</a></code> and <code><a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a...">TermColor.Win32TermBuffer</a></code> for forwarding the colored text to the OS.</p>
+<p>For a workflow example, checkout the <a href="index.html">readme</a>.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Color representation</h1>
+<p>This library provides several structures to represent color, and algorithms to convert between them:</p><ul>
+<li><a class="el" href="structTermColor_1_1ColorRGB.html" title="Color represented as a vector of (Red,Green,Blue) components in range [0.0, 1.0].">TermColor.ColorRGB</a></li>
+<li><a class="el" href="structTermColor_1_1ColorHSV.html" title="Color represented as (Hue,Saturation,Value) vector.">TermColor.ColorHSV</a></li>
+<li><a class="el" href="structTermColor_1_1Color4.html" title="A color from 16-color palette.">TermColor.Color4</a></li>
+<li><a class="el" href="structTermColor_1_1Color8.html" title="A color from 256-color palette.">TermColor.Color8</a></li>
+<li><a class="el" href="structTermColor_1_1Color24.html" title="A color from 24-bit palette.">TermColor.Color24</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Drawing shapes</h1>
+<p>Number of different shapes can be drawn on a <a class="el" href="interfaceTermColor_1_1ITerminalBuffer.html" title="Two dimensional buffer of triplets (char, IColor, IColor). Color might be internally represented as a...">TermColor.ITerminalBuffer</a> via the <a class="el" href="classTermColor_1_1Drawing_1_1ITerminalBufferEx.html">TermColor.Drawing.ITerminalBufferEx</a> class' extension methods.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Escape codes</h1>
+<p>There is also a set of internal utilities useful for generating ANSI escape sequences:</p>
+<ul>
+<li><a class="el" href="classTermColor_1_1AnsiEscapeCodes_1_1SGR.html" title="Helper class for generating &quot;Select Graphic Rendition&quot; ANSI codes. For detailed explanation,...">TermColor.AnsiEscapeCodes.SGR</a></li>
+<li><a class="el" href="classTermColor_1_1AnsiEscapeCodes_1_1CSI.html" title="Helper class for generating &quot;Control Sequence Introducer&quot; ANSI sequences For detailed explanation,...">TermColor.AnsiEscapeCodes.CSI</a> </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

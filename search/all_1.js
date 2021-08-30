@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['background_2',['Background',['../interfaceTermColor_1_1ANSIColor.html#abb3d2f2f9ba0b0d7137b8fc402bb1092',1,'TermColor::ANSIColor']]],
+  ['background_2',['Background',['../interfaceTermColor_1_1ANSIColor.html#abb3d2f2f9ba0b0d7137b8fc402bb1092',1,'TermColor.ANSIColor.Background()'],['../classTermColor_1_1AnsiEscapeCodes_1_1SGR.html#afaa446cb787b67997edc5e9528bedf6f',1,'TermColor.AnsiEscapeCodes.SGR.Background(Color4 clr)'],['../classTermColor_1_1AnsiEscapeCodes_1_1SGR.html#ad88a75572318c8d5ce5546ca1c753ece',1,'TermColor.AnsiEscapeCodes.SGR.Background(Color8 clr)'],['../classTermColor_1_1AnsiEscapeCodes_1_1SGR.html#ad6e37b11f6e74444a4e1ace6a73e0541',1,'TermColor.AnsiEscapeCodes.SGR.Background(Color24 clr)'],['../classTermColor_1_1AnsiEscapeCodes_1_1SGR.html#aacd9ba5ee98f1a747248a33b99c0a214',1,'TermColor.AnsiEscapeCodes.SGR.Background(this TextWriter tw, Color4 clr)'],['../classTermColor_1_1AnsiEscapeCodes_1_1SGR.html#a0a4ef62e6db516a17f6c807fb7647fd9',1,'TermColor.AnsiEscapeCodes.SGR.Background(this TextWriter tw, Color8 clr)'],['../classTermColor_1_1AnsiEscapeCodes_1_1SGR.html#ad244afa1158b0ba29c9e1069bc406f62',1,'TermColor.AnsiEscapeCodes.SGR.Background(this TextWriter tw, Color24 clr)']]],
   ['backgroundcolor_3',['BackgroundColor',['../classTermColor_1_1Terminal.html#a21387c39ca17af34f5c43d2e244cd8f7',1,'TermColor::Terminal']]]
 ];

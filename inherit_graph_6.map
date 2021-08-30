@@ -2,6 +2,6 @@
 <area shape="rect" id="node1" href="$interfaceTermColor_1_1ITerminalBuffer.html" title="Two dimensional buffer of triplets (char, IColor, IColor). Color might be internally represented as a..." alt="" coords="5,71,179,98"/>
 <area shape="rect" id="node2" href="$classTermColor_1_1AnsiTermBuffer.html" title="Text buffer capable of storing color data. Outputs text formatted with ANSI escape codes." alt="" coords="232,5,407,47"/>
 <area shape="rect" id="node3" href="$classTermColor_1_1Terminal.html" title="Represents a colored text buffer. Not thread&#45;safe." alt="" coords="252,122,387,149"/>
-<area shape="rect" id="node4" href="$classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 4&#45;bit colors. Data internally represented as..." alt="" coords="227,71,412,98"/>
+<area shape="rect" id="node4" href="$classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a..." alt="" coords="227,71,412,98"/>
 <area shape="rect" id="node5" title=" " alt="" coords="51,122,133,149"/>
 </map>

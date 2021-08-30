@@ -101,7 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af891bc5fd71cd5b242b3ae3b142e0706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00e84c8088bab2fe20008eb8ce8ccc23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#a00e84c8088bab2fe20008eb8ce8ccc23">Terminal</a> (int width, int height)</td></tr>
 <tr class="separator:a00e84c8088bab2fe20008eb8ce8ccc23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99f2416af7f1680d7e1f5b6bf841024b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#a99f2416af7f1680d7e1f5b6bf841024b">Terminal</a> (int width, int height, <a class="el" href="classTermColor_1_1Terminal.html#a8bb8e53ff7dc1fde31beb86ab75a70a5">ColorMode</a> colorMode)</td></tr>
+<tr class="memitem:a99f2416af7f1680d7e1f5b6bf841024b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#a99f2416af7f1680d7e1f5b6bf841024b">Terminal</a> (int width, int height, <a class="el" href="namespaceTermColor.html#a2b1129cb931e1bbbabf2c846a9bc9b86">ColorMode</a> colorMode)</td></tr>
 <tr class="separator:a99f2416af7f1680d7e1f5b6bf841024b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1b184084e6c92732fd6eaed55af5855"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#ad1b184084e6c92732fd6eaed55af5855">SetCursorPosition</a> (int left, int top)</td></tr>
 <tr class="separator:ad1b184084e6c92732fd6eaed55af5855"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +156,7 @@ override Encoding&#160;</td><td class="memItemRight" valign="bottom"><b>Encoding
 <tr class="separator:a103f7fa2417943e2562a011e4aafb2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c4eef9729cbdbde9f5666e1dd82d0f0"><td class="memItemLeft" align="right" valign="top">TextWriter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#a5c4eef9729cbdbde9f5666e1dd82d0f0">Out</a> = Console.Out<code> [get, set]</code></td></tr>
 <tr class="separator:a5c4eef9729cbdbde9f5666e1dd82d0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bb8e53ff7dc1fde31beb86ab75a70a5"><td class="memItemLeft" align="right" valign="top">ColorMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#a8bb8e53ff7dc1fde31beb86ab75a70a5">ColorMode</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a8bb8e53ff7dc1fde31beb86ab75a70a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceTermColor.html#a2b1129cb931e1bbbabf2c846a9bc9b86">ColorMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTermColor_1_1Terminal.html#a8bb8e53ff7dc1fde31beb86ab75a70a5">ColorMode</a><code> [get, set]</code></td></tr>
 <tr class="separator:a8bb8e53ff7dc1fde31beb86ab75a70a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interfaceTermColor_1_1ITerminalBuffer"><td colspan="2" onclick="javascript:toggleInherit('properties_interfaceTermColor_1_1ITerminalBuffer')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interfaceTermColor_1_1ITerminalBuffer.html">TermColor.ITerminalBuffer</a></td></tr>
 <tr class="memitem:a2de3b289dbf9219d6bf512e0df7b6b70 inherit properties_interfaceTermColor_1_1ITerminalBuffer"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfaceTermColor_1_1ITerminalBuffer.html#a2de3b289dbf9219d6bf512e0df7b6b70">Width</a><code> [get]</code></td></tr>
@@ -166,6 +166,7 @@ override Encoding&#160;</td><td class="memItemRight" valign="bottom"><b>Encoding
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a colored text buffer. Not thread-safe. </p>
+<p>Internally uses <a class="el" href="classTermColor_1_1AnsiTermBuffer.html" title="Text buffer capable of storing color data. Outputs text formatted with ANSI escape codes.">AnsiTermBuffer</a> and <a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a...">Win32TermBuffer</a> based on the current <a class="el" href="classTermColor_1_1Terminal.html#a8bb8e53ff7dc1fde31beb86ab75a70a5" title="Gets or sets the color mode of the buffer.">Terminal.ColorMode</a>. On Windows, <a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a...">Win32TermBuffer</a> is used in 16 color mode, otherwise <a class="el" href="classTermColor_1_1AnsiTermBuffer.html" title="Text buffer capable of storing color data. Outputs text formatted with ANSI escape codes.">AnsiTermBuffer</a> is used. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af891bc5fd71cd5b242b3ae3b142e0706"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af891bc5fd71cd5b242b3ae3b142e0706">&#9670;&nbsp;</a></span>Terminal() <span class="overload">[1/3]</span></h2>
@@ -263,7 +264,7 @@ override Encoding&#160;</td><td class="memItemRight" valign="bottom"><b>Encoding
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classTermColor_1_1Terminal.html#a8bb8e53ff7dc1fde31beb86ab75a70a5">ColorMode</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceTermColor.html#a2b1129cb931e1bbbabf2c846a9bc9b86">ColorMode</a>&#160;</td>
           <td class="paramname"><em>colorMode</em>&#160;</td>
         </tr>
         <tr>
@@ -848,7 +849,7 @@ override Encoding&#160;</td><td class="memItemRight" valign="bottom"><b>Encoding
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ColorMode TermColor.Terminal.ColorMode</td>
+          <td class="memname"><a class="el" href="namespaceTermColor.html#a2b1129cb931e1bbbabf2c846a9bc9b86">ColorMode</a> TermColor.Terminal.ColorMode</td>
         </tr>
       </table>
   </td>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['💻_20termcolor_20readme_66',['💻 TermColor readme',['../index.html',1,'']]]
+  ['💻_20termcolor_20readme_70',['💻 TermColor readme',['../index.html',1,'']]]
 ];

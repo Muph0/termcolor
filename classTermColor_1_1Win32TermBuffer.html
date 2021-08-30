@@ -84,7 +84,7 @@ Inheritance diagram for TermColor.Win32TermBuffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTermColor_1_1Win32TermBuffer__inherit__graph.png" border="0" usemap="#aTermColor_8Win32TermBuffer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTermColor_8Win32TermBuffer_inherit__map" id="aTermColor_8Win32TermBuffer_inherit__map">
-<area shape="rect" title="Text buffer capable of storing color data. Supports only 4&#45;bit colors. Data internally represented as..." alt="" coords="5,80,191,107"/>
+<area shape="rect" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a..." alt="" coords="5,80,191,107"/>
 <area shape="rect" href="interfaceTermColor_1_1ITerminalBuffer.html" title="Two dimensional buffer of triplets (char, IColor, IColor). Color might be internally represented as a..." alt="" coords="43,5,153,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -93,7 +93,7 @@ Collaboration diagram for TermColor.Win32TermBuffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTermColor_1_1Win32TermBuffer__coll__graph.png" border="0" usemap="#aTermColor_8Win32TermBuffer_coll__map" alt="Collaboration graph"/></div>
 <map name="aTermColor_8Win32TermBuffer_coll__map" id="aTermColor_8Win32TermBuffer_coll__map">
-<area shape="rect" title="Text buffer capable of storing color data. Supports only 4&#45;bit colors. Data internally represented as..." alt="" coords="5,80,191,107"/>
+<area shape="rect" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a..." alt="" coords="5,80,191,107"/>
 <area shape="rect" href="interfaceTermColor_1_1ITerminalBuffer.html" title="Two dimensional buffer of triplets (char, IColor, IColor). Color might be internally represented as a..." alt="" coords="43,5,153,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -190,7 +190,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Height</b><code> [get]
 <tr class="separator:a1f3d07cfca90c0f141f69ae0d96328d4 inherit properties_interfaceTermColor_1_1ITerminalBuffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Text buffer capable of storing color data. Supports only 4-bit colors. Data internally represented as a binary structure ready to be passed to Windows Console API. Outputs colored text via Windows Console API. </p>
+<div class="textblock"><p>Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented as a binary structure ready to be passed to Windows Console API. Outputs colored text via Windows Console API. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a787c8b9e2e6cbed828ab635972f91613"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a787c8b9e2e6cbed828ab635972f91613">&#9670;&nbsp;</a></span>Win32TermBuffer()</h2>
@@ -344,7 +344,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Height</b><code> [get]
 </table>
 </div><div class="memdoc">
 
-<p>Forward the contents of the buffer to an output device. <a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 4-bit colors. Data internally represented as...">Win32TermBuffer</a> can output only to Windows Console, therefore the device must be Console.Out. </p>
+<p>Forward the contents of the buffer to an output device. <a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a...">Win32TermBuffer</a> can output only to Windows Console, therefore the device must be Console.Out. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Forward the contents of the buffer to an output device. Must be Console.Out, otherwise exception is thrown.</td></tr>
@@ -402,7 +402,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Height</b><code> [get]
 </table>
 </div><div class="memdoc">
 
-<p>Forward the contents of the buffer to an output device at a specific offset. <a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 4-bit colors. Data internally represented as...">Win32TermBuffer</a> can output only to Windows Console, therefore the device must be Console.Out. </p>
+<p>Forward the contents of the buffer to an output device at a specific offset. <a class="el" href="classTermColor_1_1Win32TermBuffer.html" title="Text buffer capable of storing color data. Supports only 16 color mode. Data internally represented a...">Win32TermBuffer</a> can output only to Windows Console, therefore the device must be Console.Out. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Forward the contents of the buffer to an output device at a specific offset. Must be Console.Out, otherwise exception is thrown.</td></tr>

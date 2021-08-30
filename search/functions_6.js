@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resetcolor_108',['ResetColor',['../classTermColor_1_1Terminal.html#a4113447d18053e5c3bd4b8e0af1f2c63',1,'TermColor::Terminal']]]
+  ['precompute_113',['Precompute',['../classTermColor_1_1DitherMapping.html#ab32c899ad53fbed1124db98b89a77659',1,'TermColor::DitherMapping']]]
 ];
