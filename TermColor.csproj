@@ -5,12 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="images\**" />
     <Compile Remove="TermColorDemo\**" />
     <Compile Remove="TermColorTest\**" />
+    <Compile Remove="user_manual\**" />
+    <EmbeddedResource Remove="images\**" />
     <EmbeddedResource Remove="TermColorDemo\**" />
     <EmbeddedResource Remove="TermColorTest\**" />
+    <EmbeddedResource Remove="user_manual\**" />
+    <None Remove="images\**" />
     <None Remove="TermColorDemo\**" />
     <None Remove="TermColorTest\**" />
+    <None Remove="user_manual\**" />
   </ItemGroup>
 
 </Project>

@@ -15,7 +15,7 @@ distclean:
 	rm -rf user_manual
 
 docs:
-	doxygen doxygen_user_manual.conf
+	doxygen doxygen.conf
 	cp -ru images user_manual/html/
 
 

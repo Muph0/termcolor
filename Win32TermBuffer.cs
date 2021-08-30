@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace TermColor {
 
+    /// <summary>
+    /// Text buffer capable of storing color data.
+    /// Supports only 4-bit colors. Data internally represented as a binary structure ready to be passed to Windows Console API.
+    /// Outputs colored text via Windows Console API.
+    /// </summary>
     internal class Win32TermBuffer : ITerminalBuffer {
 
         private int _width, _height;
@@ -172,11 +177,29 @@ namespace TermColor {
             }
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// <see cref="Win32TermBuffer"/> can output only to Windows Console,
+        /// therefore the device must be <see cref="Console.Out"/>.
+        /// </summary>
+        /// <param name="output"><inheritdoc/> Must be <see cref="Console.Out"/>, otherwise exception is thrown.</param>
+        /// <exception cref="ArgumentException"></exception>
         public void Flush(TextWriter output) {
             Flush(output, 0, 0);
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// <see cref="Win32TermBuffer"/> can output only to Windows Console,
+        /// therefore the device must be <see cref="Console.Out"/>.
+        /// </summary>
+        /// <param name="output"><inheritdoc/> Must be <see cref="Console.Out"/>, otherwise exception is thrown.</param>
+        /// <exception cref="ArgumentException"></exception>
         public void Flush(TextWriter output, int offsetX, int offsetY) {
+
+            if (output != Console.Out) {
+                throw new ArgumentException("Can only output to System.Console.Out.", nameof(output));
+            }
 
             SafeFileHandle h = CreateFile("CONOUT$", 0x40000000, 2,
                 IntPtr.Zero, FileMode.Open, 0, IntPtr.Zero);
