@@ -21,19 +21,19 @@ For a workflow example, checkout the [readme](index.html).
 ## Color representation
 
 This library provides several structures to represent color, and algorithms to convert between them:
-- TermColor.ColorRGB
-- TermColor.ColorHSV
-- TermColor.Color4
-- TermColor.Color8
-- TermColor.Color24
+- `TermColor.ColorRGB`
+- `TermColor.ColorHSV`
+- `TermColor.Color4`
+- `TermColor.Color8`
+- `TermColor.Color24`
 
 ## Drawing shapes
 
-Number of different shapes can be drawn on a TermColor.ITerminalBuffer via the TermColor.Drawing.ITerminalBufferEx class' extension methods.
+Number of different shapes can be drawn on a `TermColor.ITerminalBuffer` via the `TermColor.Drawing.ITerminalBufferEx` class' extension methods.
 
 ## Escape codes
 
 There is also a set of internal utilities useful for generating ANSI escape sequences:
 
-- TermColor.AnsiEscapeCodes.SGR
-- TermColor.AnsiEscapeCodes.CSI
+- `TermColor.AnsiEscapeCodes.SGR`
+- `TermColor.AnsiEscapeCodes.CSI`
